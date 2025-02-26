@@ -77,3 +77,27 @@ body {
   height: 28.7vw;
   background-image: url("../images/livingroom.svg");
 }
+.kapusta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -55.75vw;
+  flex-direction: column;
+}
+
+img {
+  width: 3vw; /* Начальный размер изображения */
+  transition: transform 0.3s, opacity 0.3s; /* Плавный переход */
+  cursor: pointer; /* Указатель при наведении */
+  margin: 2.75vw; /* Отступ между изображениями */
+  margin-right: 82.75vw;
+}
+.carrot {
+  display: flex;
+  justify-content: center; /* Центрирование изображений */
+  align-items: center;
+  margin-top: 2vw;
+  transition: transform 0.3s, opacity 0.3s, background-image 0.3s; /* Плавный переход */
+  cursor: pointer; /* Указатель при наведении */
+  margin: 0 10vw; /* Отступ между изображениями */
+}
