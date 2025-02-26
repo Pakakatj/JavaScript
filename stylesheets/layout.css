@@ -1,3 +1,79 @@
+* {
+  box-sizing: border-box;
+}
 body {
-  background-color: rosybrown;
+  margin: 0;
+  padding: 0;
+}
+.house {
+  width: 100%;
+  height: 135vw;
+  background-image: url("../images/housefon.svg");
+  background-size: contain;
+}
+.dym {
+  width: 30.1vw;
+  height: 26.6vw;
+  background-image: url("../images/dim1.svg");
+  background-size: contain;
+  position: absolute;
+  right: 3vw;
+  top: 2vw;
+}
+
+.dym:hover {
+  background-image: url("../images/dim2.svg");
+  width: 29.9vw;
+  height: 15vw;
+  background-size: contain;
+  position: absolute;
+  right: 3vw;
+  top: 2vw;
+}
+.rooms {
+  width: 66.25vw;
+  gap: 2.66vw 2.344vw;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  align-items: center;
+  padding-top: 15vw;
+}
+.rooms > div {
+  background-size: cover;
+}
+.rooms .cherdak {
+  width: 100%;
+  height: 36vw;
+  background-image: url("../images/cherdak.svg");
+  margin-top: -0.8vw;
+  margin-left: -1.8vw;
+}
+.rooms .bathroom {
+  width: 25.08vw;
+  height: 27.42vw;
+  background-image: url("../images/bathroom.svg");
+  margin-top: -6.85vw;
+  margin-left: 0.8vw;
+}
+.rooms .bedroom {
+  margin-top: -32.9vw;
+  margin-left: 28.58vw;
+  width: 37vw;
+  height: 27.42vw;
+  background-image: url("../images/bedroom.svg");
+}
+.rooms .kitchen {
+  width: 39.5vw;
+  height: 28.7vw;
+  background-image: url("../images/kitchen.svg");
+  margin-top: -2.93vw;
+  margin-left: 0.9vw;
+}
+.rooms .livingroom {
+  width: 22.7vw;
+  margin-left: 42.9vw;
+  margin-top: -34vw;
+  height: 28.7vw;
+  background-image: url("../images/livingroom.svg");
 }
