@@ -132,60 +132,124 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -5vw;
+  display: grid;
+  margin-left: 5vw;
+  grid-template-columns: repeat(2, 2vw);
+  grid-template-rows: repeat(2, 2vw);
+  gap: 4vw;
 }
 
 .pumpkin {
   background-image: url("../images/pumpkin.svg");
-  width: 3vw; /* Начальный размер изображения */
+  width: 5vw;
+  height: 4vw;
+  background-size: cover;
   transition: transform 0.3s, opacity 0.3s; /* Плавный переход */
   cursor: pointer; /* Указатель при наведении */
   margin: 2.75vw; /* Отступ между изображениями */
 }
 
 #cherdak {
-  width: 100%;
-  height: 57vw;
+  width: 100vw;
+  height: 100vh;
   background-image: url("../images/fon.svg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .attic {
   width: 80vw;
   height: 50vw;
   background-image: url("../images/attic.svg");
-  margin-left: 10.5vw;
+  position: relative;
+  background-size: cover;
+}
+.bathroomm {
+  width: 80vw;
+  height: 50vw;
+  background-image: url("../images/bathroomm.svg");
+  position: relative;
+  background-size: cover;
+}
+.bedroomm {
+  width: 80vw;
+  height: 50vw;
+  background-image: url("../images/bedroomm.svg");
+  position: relative;
+  background-size: cover;
+}
+.kitchenn {
+  width: 80vw;
+  height: 50vw;
+  background-image: url("../images/kitchenn.svg");
+  position: relative;
+  background-size: cover;
+}
+.livingroomm {
+  width: 80vw;
+  height: 50vw;
+  background-image: url("../images/livingroomm.svg");
+  position: relative;
+  background-size: cover;
+}
+.domik {
+  width: 3vw;
+  position: absolute;
+  right: 2vw;
+  bottom: 2vw;
 }
 .svet {
-  background-image: url("../images/svet.svg");
+  width: 9vw;
+  position: absolute;
+  right: 35.65vw;
+  bottom: 34vw;
+  animation: svet 4s infinite; /* Анимация качания */
+  transform: scale(1.05);
+  cursor: pointer;
+  transition: opacity 0.5s;
 }
-.hidden {
+#body article.hidden {
   display: none;
   background-size: contain;
 }
 #bedroomm {
-  width: 100%;
-  height: 57vw;
+  width: 100vw;
+  height: 100vh;
   background-image: url("../images/fon.svg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #bathroomm {
-  width: 100%;
-  height: 57vw;
+  width: 100vw;
+  height: 100vh;
   background-image: url("../images/fon.svg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #livingroomm {
-  width: 100%;
-  height: 57vw;
+  width: 100vw;
+  height: 100vh;
   background-image: url("../images/fon.svg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #kitchenn {
-  width: 100%;
-  height: 57vw;
+  width: 100vw;
+  height: 100vh;
   background-image: url("../images/fon.svg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .cloud {
   position: absolute;
   opacity: 0.8;
   animation: float 15s infinite linear;
+  background-size: cover;
 }
 
 #cloud1 {
@@ -237,4 +301,30 @@ body {
   left: 5%;
   background-image: url("../images/k3.svg");
   animation-direction: alternate-reverse;
+}
+.tablo {
+  width: 10vw;
+  margin-top: -20vw;
+  margin-right: 2vw;
+  background-size: cover;
+  animation-direction: alternate;
+}
+.dropzone {
+  background-image: url("../images/box1.svg");
+  background-size: cover;
+  animation-direction: alternate;
+  width: 18vw;
+  height: 16vw;
+  margin-top: -14.5vw;
+  margin-left: 26.9vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.draggable {
+  width: 6vw;
+  margin-top: 40vw;
+  margin-left: 9vw;
+  cursor: pointer;
+  user-select: none;
 }

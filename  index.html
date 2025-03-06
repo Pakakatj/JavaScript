@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="stylesheets/style.css" />
     <script src="javascripts/js-functions.js"></script>
+
     <title>DACHA</title>
   </head>
-  <body>
+  <link rel="icon" type="images/svg" href="images/icon.svg" />
+  <body id="body">
     <article id="home">
       <section class="house">
         <div class="dym"></div>
+
         <div class="rooms">
           <div class="cherdak"></div>
           <div class="bathroom"></div>
@@ -36,12 +39,14 @@
           <div class="carrot mini"></div>
           <div class="carrot mini"></div>
         </div>
+
         <div class="tikvas">
           <div class="pumpkin"></div>
           <div class="pumpkin"></div>
           <div class="pumpkin"></div>
           <div class="pumpkin"></div>
         </div>
+        <img src="images/tablo.svg" class="tablo" />
       </section>
       <section class="sky">
         <div class="cloud" id="cloud1"></div>
@@ -52,14 +57,38 @@
         <div class="cloud" id="cloud6"></div>
       </section>
     </article>
-    <article id="cherdak" class="hidden">
+    <article id="cherdak" class="hidden komnata">
       <section class="attic">
-        <div class="svet"></div>
+        <img src="images/svet.svg" class="svet" id="clickable-image" />
+        <img
+          src="images/ula.png"
+          class="draggable"
+          id="draggable"
+          draggable="true"
+        />
+        <div class="dropzone" id="dropzone"></div>
+        <img src="images/knopkadom.svg" class="domik" />
       </section>
     </article>
-    <article id="bedroomm" class="hidden"></article>
-    <article id="bathroomm" class="hidden"></article>
-    <article id="livingroomm" class="hidden"></article>
-    <article id="kitchenn" class="hidden"></article>
+    <article id="bedroomm" class="hidden komnata">
+      <section class="bedroomm">
+        <img src="images/knopkadom.svg" class="domik" />
+      </section>
+    </article>
+    <article id="bathroomm" class="hidden komnata">
+      <section class="bathroomm">
+        <img src="images/knopkadom.svg" class="domik" />
+      </section>
+    </article>
+    <article id="livingroomm" class="hidden komnata">
+      <section class="livingroomm">
+        <img src="images/knopkadom.svg" class="domik" />
+      </section>
+    </article>
+    <article id="kitchenn" class="hidden komnata">
+      <section class="kitchenn">
+        <img src="images/knopkadom.svg" class="domik" />
+      </section>
+    </article>
   </body>
 </html>
