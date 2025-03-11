@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
   scaleCarrot();
   scaleTikvas();
   changeRoom();
+  svet();
+  vkl();
+  putInBox();
+  createBubble();
 });
 
 function changeRoom() {
@@ -110,6 +114,9 @@ function enlarge(image) {
   if (newScale >= 8) {
     // Если масштаб достиг 8, изображение исчезает
     image.style.opacity = 0; // Устанавливаем прозрачность в 0
+    setTimeout(() => {
+      image.style.cssText = "position: relative; z-index: -1";
+    }, 500);
   } else {
     image.style.transform = `scale(${newScale})`; // Установка нового масштаба
   }
@@ -121,46 +128,66 @@ clouds.forEach((cloud) => {
   cloud.style.animationDuration = `${randomDuration}s`; // Устанавливаем случайную длительность анимации
 });
 
-const svet = document.getElementById("svet");
-const images = ["images/svet.svg", "images/attic2.svg"]; // Массив с путями к изображениям
-let currentIndex = 0;
+setTimeout(() => {
+  // Меняем изображение
+  currentIndex = (currentIndex + 1) % images.length;
+  image.src = images[currentIndex];
+  // Увеличиваем непрозрачность обратно до 1
+  image.style.opacity = 1;
+}, 500); // Задержка на 0.5 секунды для плавного перехода
 
-svet.addEventListener("click", () => {
-  // Уменьшаем непрозрачность до 0
-  image.style.opacity = 0;
-
+function svet() {
+  let lampa = document.querySelector(".svet");
+  const attic = document.querySelector(".attic");
+  lampa.addEventListener("click", () => {
+    attic.style.cssText = "background-image: url(images/attic2.svg)";
+  });
+}
+function vkl() {
+  let lampa2 = document.querySelector(".vkl");
+  const bedroomm = document.querySelector(".bedroomm");
+  lampa2.addEventListener("click", () => {
+    bedroomm.style.cssText = "background-image: url(images/bedroomm2.svg)";
+  });
+}
+function putInBox() {
+  const yula = document.getElementById("yula");
+  yula.style.opacity = "0"; // Устанавливаем непрозрачность юлы в 0, чтобы она исчезла
   setTimeout(() => {
-    // Меняем изображение
-    currentIndex = (currentIndex + 1) % images.length;
-    image.src = images[currentIndex];
-    // Увеличиваем непрозрачность обратно до 1
-    image.style.opacity = 1;
-  }, 500); // Задержка на 0.5 секунды для плавного перехода
-});
+    yula.style.display = "none"; // Скрываем юлу после того, как она исчезла
+  }, 300); // Задержка, равная времени перехода
+}
+// const bubbleImages = ["b.svg", "b.svg", "b.svg"]; // Замените на свои изображения
+// const popImage = ""; // Изображение лопнувшего пузыря
+// const bubbleCount = 10; // Количество пузырей
 
-const draggable = document.getElementById("draggable");
-const dropzone = document.getElementById("dropzone");
+// // function createBubble() {
+//   const bubble = document.createElement("img");
+//   bubble.src = bubbleImages[Math.floor(Math.random() * bubbleImages.length)];
+//   bubble.className = "bubble";
+//   bubble.style.width = "10vw"; // Размер пузыря
+//   bubble.style.height = "10vw"; // Размер пузыря
+//   bubble.style.top = `${Math.random() * window.innerHeight}vw`;
+//   bubble.style.left = `${Math.random() * window.innerWidth}vw`;
+//   document.body.appendChild(bubble);
 
-draggable.addEventListener("dragstart", (event) => {
-  event.dataTransfer.setData("text/plain", null);
-});
+//   // Анимация движения
+//   setInterval(() => {
+//     const x = Math.random() * 10 - 5; // Случайное смещение по X
+//     const y = Math.random() * 10 - 5; // Случайное смещение по Y
+//     bubble.style.transform = `translate(${x}vw, ${y}vw)`;
+//   }, 1000);
 
-dropzone.addEventListener("dragover", (event) => {
-  event.preventDefault();
-});
+//   // Обработка щелчка по пузырю
+//   bubble.addEventListener("click", () => {
+//     bubble.src = popImage; // Меняем изображение на лопнувший пузырь
+//     setTimeout(() => {
+//       bubble.remove(); // Удаляем пузырь через 500 мс
+//     }, 500);
+//   });
+// }
 
-dropzone.addEventListener("drop", (event) => {
-  event.preventDefault();
-  const dropzoneRect = dropzone.getBoundingClientRect();
-  const draggableRect = draggable.getBoundingClientRect();
-
-  // Проверяем, пересекается ли изображение с коробкой
-  if (
-    draggableRect.left < dropzoneRect.right &&
-    draggableRect.right > dropzoneRect.left &&
-    draggableRect.top < dropzoneRect.bottom &&
-    draggableRect.bottom > dropzoneRect.top
-  ) {
-    draggable.style.display = "none"; // Скрываем изображение
-  }
-});
+// // Генерируем пузыри
+// for (let i = 0; i < bubbleCount; i++) {
+//   createBubble();
+// }

@@ -208,6 +208,7 @@ body {
   transform: scale(1.05);
   cursor: pointer;
   transition: opacity 0.5s;
+  transform-origin: top center;
 }
 #body article.hidden {
   display: none;
@@ -309,18 +310,7 @@ body {
   background-size: cover;
   animation-direction: alternate;
 }
-.dropzone {
-  background-image: url("../images/box1.svg");
-  background-size: cover;
-  animation-direction: alternate;
-  width: 18vw;
-  height: 16vw;
-  margin-top: -14.5vw;
-  margin-left: 26.9vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 .draggable {
   width: 6vw;
   margin-top: 40vw;
@@ -328,3 +318,39 @@ body {
   cursor: pointer;
   user-select: none;
 }
+.vkl {
+  width: 3.5vw;
+  margin-top: 16vw;
+  margin-left: 67vw;
+  cursor: pointer;
+}
+#container {
+  position: relative;
+  width: 18vw;
+  height: 16vw;
+  margin-top: 33vw;
+  margin-left: 26.9vw;
+  overflow: hidden;
+}
+#korobka {
+  width: 100%;
+  height: auto;
+}
+#yula {
+  position: absolute;
+  width: 6vw;
+  height: 10vw;
+  margin-top: 10vw;
+  margin-left: 9vw;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+/* .bubble {
+  background-image: url("../images/b.svg");
+  background-size: cover;
+  width: 8vw;
+  height: 8vw;
+  position: absolute;
+  transition: transform 0.5s;
+  cursor: pointer;
+} */
