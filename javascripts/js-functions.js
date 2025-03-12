@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   svet();
   vkl();
   draggable();
+
   createBubble();
 });
 
