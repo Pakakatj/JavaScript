@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   svet();
   vkl();
   // putInBox();
-  // createBubble();
+  createBubble();
 });
 
 function changeRoom() {
@@ -149,37 +149,24 @@ function putInBox() {
     yula.style.display = "none"; // Скрываем юлу после того, как она исчезла
   }, 300); // Задержка, равная времени перехода
 }
-// const bubbleImages = ["b.svg", "b.svg", "b.svg"]; // Замените на свои изображения
-// const popImage = ""; // Изображение лопнувшего пузыря
-// const bubbleCount = 10; // Количество пузырей
 
-// function createBubble() {
-//   const bubble = document.createElement("img");
-//   bubble.src = bubbleImages[Math.floor(Math.random() * bubbleImages.length)];
-//   bubble.className = "bubble";
-//   bubble.style.width = "10vw"; // Размер пузыря
-//   bubble.style.height = "10vw"; // Размер пузыря
-//   bubble.style.top = `${Math.random() * window.innerHeight}vw`;
-//   bubble.style.left = `${Math.random() * window.innerWidth}vw`;
-//   document.body.appendChild(bubble);
+const bubble = document.getElementById("bubble");
 
-//   // Анимация движения
-//   setInterval(() => {
-//     const x = Math.random() * 10 - 5; // Случайное смещение по X
-//     const y = Math.random() * 10 - 5; // Случайное смещение по Y
-//     bubble.style.transform = `translate(${x}vw, ${y}vw)`;
-//   }, 1000);
+// Функция для перемещения пузырька
+function moveBubble() {
+  const randomX = Math.random() * (window.innerWidth - 20); // 100 - ширина пузырька
+  const randomY = Math.random() * (window.innerHeight - 20); // 100 - высота пузырька
+  bubble.style.transform = `translate(${randomX}vw, ${randomY}vw)`;
+}
 
-//   // Обработка щелчка по пузырю
-//   bubble.addEventListener("click", () => {
-//     bubble.src = popImage; // Меняем изображение на лопнувший пузырь
-//     setTimeout(() => {
-//       bubble.remove(); // Удаляем пузырь через 500 мс
-//     }, 500);
-//   });
-// }
+// Анимация "плавания" пузырька
+setInterval(() => {
+  bubble.style.animation = "float 2s ease-in-out infinite"; // Пузырь плавает
+  moveBubble();
+}, 2000);
 
-// // Генерируем пузыри
-// for (let i = 0; i < bubbleCount; i++) {
-//   createBubble();
-// }
+// Обработчик нажатия на пузырь
+bubble.addEventListener("click", () => {
+  bubble.style.transition = "transform 0.3s ease-in-out";
+  bubble.style.transform = "scale(0)"; // Лопаем пузырь
+});

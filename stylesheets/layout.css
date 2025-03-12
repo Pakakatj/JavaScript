@@ -338,14 +338,12 @@ body {
   cursor: pointer;
   transition: opacity 0.3s;
 }
-/* .bubble {
-  background-image: url("../images/b.svg");
-  background-size: cover;
+.bubble {
   width: 8vw;
   height: 8vw;
   position: absolute;
-  transition: transform 0.5s;
   cursor: pointer;
-} */
+  transition: transform 0.3s ease-in-out;
+}
 .milk {
 }
