@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   changeRoom();
   svet();
   vkl();
-  // putInBox();
+  draggable();
   createBubble();
 });
 
@@ -142,12 +142,69 @@ function vkl() {
     bedroomm.style.cssText = "background-image: url(images/bedroomm2.svg)";
   });
 }
-function putInBox() {
-  const yula = document.getElementById("yula");
-  yula.style.opacity = "0"; // Устанавливаем непрозрачность юлы в 0, чтобы она исчезла
-  setTimeout(() => {
-    yula.style.display = "none"; // Скрываем юлу после того, как она исчезла
-  }, 300); // Задержка, равная времени перехода
+
+function draggable() {
+  let currentDroppable = null;
+  let yula = document.querySelector("#yula");
+  let draggable = document.querySelectorAll(".drag");
+
+  draggable.forEach((drag) => {
+    drag.onmousedown = function (event) {
+      let shiftX = event.clientX - drag.getBoundingClientRect().left;
+      let shiftY = event.clientY - drag.getBoundingClientRect().top;
+
+      drag.style.position = "absolute";
+      drag.style.zIndex = 1000;
+      document.body.append(drag);
+
+      moveAt(event.pageX, event.pageY);
+
+      function moveAt(pageX, pageY) {
+        drag.style.left = pageX - shiftX + "px";
+        drag.style.top = pageY - shiftY + "px";
+      }
+
+      function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+
+        drag.hidden = true;
+        let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+        drag.hidden = false;
+
+        if (!elemBelow) return;
+
+        let droppableBelow = elemBelow.closest(".droppable");
+        if (currentDroppable != droppableBelow) {
+          currentDroppable = droppableBelow;
+          if (currentDroppable) {
+            // null если мы не над droppable сейчас, во время этого события
+            // (например, только что покинули droppable)
+            enterDroppable(currentDroppable);
+          }
+        }
+      }
+
+      document.addEventListener("mousemove", onMouseMove);
+
+      drag.onmouseup = function () {
+        document.removeEventListener("mousemove", onMouseMove);
+        drag.onmouseup = null;
+      };
+    };
+
+    function enterDroppable(elem) {
+      drag.style.opacity = "0";
+      drag.style.trasition = "opacity 0.5s ease";
+
+      setTimeout(() => {
+        drag.style.display = "none";
+      }, 501);
+    }
+
+    drag.ondragstart = function () {
+      return false;
+    };
+  });
 }
 
 const bubble = document.getElementById("bubble");
