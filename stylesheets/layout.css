@@ -324,17 +324,10 @@ body {
   margin-left: 67vw;
   cursor: pointer;
 }
-#container {
-  position: relative;
+
+#korobka {
   width: 18vw;
   height: 16vw;
-  margin-top: 33vw;
-  margin-left: 26.9vw;
-  overflow: hidden;
-}
-#korobka {
-  width: 100%;
-  height: auto;
 }
 #yula {
   position: absolute;

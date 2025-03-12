@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   changeRoom();
   svet();
   vkl();
-  putInBox();
-  createBubble();
+  // putInBox();
+  // createBubble();
 });
 
 function changeRoom() {
@@ -128,14 +128,6 @@ clouds.forEach((cloud) => {
   cloud.style.animationDuration = `${randomDuration}s`; // Устанавливаем случайную длительность анимации
 });
 
-setTimeout(() => {
-  // Меняем изображение
-  currentIndex = (currentIndex + 1) % images.length;
-  image.src = images[currentIndex];
-  // Увеличиваем непрозрачность обратно до 1
-  image.style.opacity = 1;
-}, 500); // Задержка на 0.5 секунды для плавного перехода
-
 function svet() {
   let lampa = document.querySelector(".svet");
   const attic = document.querySelector(".attic");
@@ -161,7 +153,7 @@ function putInBox() {
 // const popImage = ""; // Изображение лопнувшего пузыря
 // const bubbleCount = 10; // Количество пузырей
 
-// // function createBubble() {
+// function createBubble() {
 //   const bubble = document.createElement("img");
 //   bubble.src = bubbleImages[Math.floor(Math.random() * bubbleImages.length)];
 //   bubble.className = "bubble";
