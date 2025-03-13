@@ -363,15 +363,9 @@ body {
   transition: transform 0.3s ease-in-out;
   background-size: cover;
 }
-#bubble2 {
+.b1 {
   top: 20vw;
   left: 50vw;
-  width: 8vw;
-  height: 8vw;
-  position: absolute;
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-  background-size: cover;
 }
 
 .draggable {
