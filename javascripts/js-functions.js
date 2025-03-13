@@ -6,10 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
   svet();
   vkl();
   draggable();
-
-  createBubble();
+  moveBubble();
 });
-
 function changeRoom() {
   let home = document.querySelector("#home");
   let cherdak = document.querySelector("#cherdak");
@@ -58,7 +56,6 @@ function changeRoom() {
     kitchenn.classList.remove("hidden");
   });
 }
-
 function scaleCapusta() {
   const kapustas = document.querySelectorAll(".kapusta");
 
@@ -68,11 +65,9 @@ function scaleCapusta() {
     });
   });
 }
-
 function enlarge(image) {
   const currentScale = image.style.transform.match(/scale\(([^)]+)\)/);
   const newScale = currentScale ? parseFloat(currentScale[1]) * 2 : 2; // Увеличение в 2 раза
-
   if (newScale >= 8) {
     // Если масштаб достиг 8, изображение исчезает
     image.style.opacity = 0; // Устанавливаем прозрачность в 0
@@ -80,7 +75,6 @@ function enlarge(image) {
     image.style.transform = `scale(${newScale})`; // Установка нового масштаба
   }
 }
-
 function scaleCarrot() {
   const carrots = document.querySelectorAll(".carrot");
 
@@ -107,7 +101,6 @@ function scaleTikvas() {
     });
   });
 }
-
 function enlarge(image) {
   const currentScale = image.style.transform.match(/scale\(([^)]+)\)/);
   const newScale = currentScale ? parseFloat(currentScale[1]) * 2 : 2; // Увеличение в 2 раза
@@ -123,12 +116,10 @@ function enlarge(image) {
   }
 }
 const clouds = document.querySelectorAll(".cloud");
-
 clouds.forEach((cloud) => {
   const randomDuration = Math.random() * (20 - 10) + 10; // Генерируем случайную продолжительность
   cloud.style.animationDuration = `${randomDuration}s`; // Устанавливаем случайную длительность анимации
 });
-
 function svet() {
   let lampa = document.querySelector(".svet");
   const attic = document.querySelector(".attic");
@@ -143,10 +134,16 @@ function vkl() {
     bedroomm.style.cssText = "background-image: url(images/bedroomm2.svg)";
   });
 }
-
 function draggable() {
   let currentDroppable = null;
+  let matr = document.querySelector("#matr");
   let yula = document.querySelector("#yula");
+  let teddy = document.querySelector("#teddy");
+  let milk = document.querySelector("#milk");
+  let eggs = document.querySelector("#eggs");
+  let cherry = document.querySelector("#cherry");
+  let sugar = document.querySelector("#sugar");
+  let myka = document.querySelector("#myka");
   let draggable = document.querySelectorAll(".drag");
 
   draggable.forEach((drag) => {
@@ -207,24 +204,28 @@ function draggable() {
     };
   });
 }
-
-const bubble = document.getElementById("bubble");
-
 // Функция для перемещения пузырька
 function moveBubble() {
-  const randomX = Math.random() * (window.innerWidth - 20); // 100 - ширина пузырька
-  const randomY = Math.random() * (window.innerHeight - 20); // 100 - высота пузырька
-  bubble.style.transform = `translate(${randomX}vw, ${randomY}vw)`;
+  const bubbles = document.querySelectorAll(".bubble");
+
+  bubbles.forEach((bubble) => {
+    const randomX = Math.random() * (window.innerWidth - 20); // 100 - ширина пузырька
+    const randomY = Math.random() * (window.innerHeight - 20); // 100 - высота пузырька
+    bubble.style.transform = `translate(${randomX}vw, ${randomY}vw)`;
+
+    // Анимация "плавания" пузырька
+    setInterval(() => {
+      bubble.style.animation = "float 2s ease-in-out infinite"; // Пузырь плавает
+      moveBubble();
+    }, 2000);
+
+    // Обработчик нажатия на пузырь
+    bubble.addEventListener("click", () => {
+      bubble.style.transition = "transform 0.3s ease-in-out";
+      bubble.src = "images/bum.svg";
+      setTimeout(() => {
+        bubble.style.display = "none"; // Лопаем пузырь
+      }, 400);
+    });
+  });
 }
-
-// Анимация "плавания" пузырька
-setInterval(() => {
-  bubble.style.animation = "float 2s ease-in-out infinite"; // Пузырь плавает
-  moveBubble();
-}, 2000);
-
-// Обработчик нажатия на пузырь
-bubble.addEventListener("click", () => {
-  bubble.style.transition = "transform 0.3s ease-in-out";
-  bubble.style.transform = "scale(0)"; // Лопаем пузырь
-});
