@@ -11,6 +11,7 @@ body {
   background-image: url("../images/housefon.svg");
   background-size: contain;
 }
+
 .dym {
   width: 30.1vw;
   height: 26.6vw;
@@ -329,6 +330,12 @@ body {
   margin-bottom: 40vw;
   margin-left: 50vw;
 }
+#korobka3 {
+  width: 18vw;
+  height: 16vw;
+  margin-bottom: 220vw;
+  margin-left: 50vw;
+}
 #yula {
   position: absolute;
   width: 6vw;
@@ -422,4 +429,62 @@ body {
   cursor: pointer;
   transition: opacity 0.3s;
   position: absolute;
+}
+.tv {
+  width: 25.5vw;
+  height: 20.5vw;
+  background-color: black;
+  border-radius: 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  left: 21.5vw;
+  bottom: 13vw;
+}
+.screen {
+  width: 100%;
+  height: 100%;
+  background-color: #222;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+img.active {
+  display: block;
+}
+button {
+  margin-top: 10vw;
+  padding: 10vw 10vw;
+  font-size: 10vw;
+}
+.book {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  left: 17vw;
+  bottom: 6vw;
+}
+
+.page {
+  width: 43vw;
+  height: 33vw;
+  box-sizing: border-box;
+  position: relative;
+  background-image: url("../images/book.svg");
+  background-size: cover;
+}
+
+.drawn {
+  position: absolute;
+  background-color: #000;
+  pointer-events: none;
+}
+
+.tools {
+  height: 5vw;
+  bottom: 10vw;
 }

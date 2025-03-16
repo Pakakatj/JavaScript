@@ -229,3 +229,59 @@ function moveBubble() {
     });
   });
 }
+const images = document.querySelectorAll(".screen img");
+let currentIndex = 0;
+
+document.getElementById("changeImageBtn").addEventListener("click", () => {
+  images[currentIndex].classList.remove("active");
+  currentIndex = (currentIndex + 1) % images.length;
+  images[currentIndex].classList.add("active");
+});
+const drawArea = document.getElementById("drawArea");
+const clearBtn = document.getElementById("clearBtn");
+
+let isDrawing = false;
+let lastX = 0;
+let lastY = 0;
+
+drawArea.addEventListener("mousedown", (e) => {
+  isDrawing = true;
+  lastX = e.offsetX;
+  lastY = e.offsetY;
+});
+
+drawArea.addEventListener("mousemove", (e) => {
+  if (!isDrawing) return;
+
+  const drawnLine = document.createElement("div");
+  drawnLine.classList.add("drawn");
+
+  // Получаем текущие координаты мыши
+  const currentX = e.offsetX;
+  const currentY = e.offsetY;
+
+  // Находим ширину и высоту линии
+  const width = Math.abs(currentX - lastX);
+  const height = Math.abs(currentY - lastY);
+
+  // Настраиваем стиль линии
+  drawnLine.style.width = `${width}vw`;
+  drawnLine.style.height = "4vw"; // Толщина линии
+  drawnLine.style.left = `${Math.min(currentX, lastX)}vw`;
+  drawnLine.style.top = `${Math.min(currentY, lastY)}vw`;
+  drawnLine.style.transform = `rotate(${
+    Math.atan2(currentY - lastY, currentX - lastX) * (180 / Math.PI)
+  }deg)`;
+
+  drawArea.appendChild(drawnLine);
+
+  lastX = currentX;
+  lastY = currentY;
+});
+
+drawArea.addEventListener("mouseup", () => {
+  isDrawing = false;
+  drawArea.querySelectorAll(".drawn").forEach((line) => {
+    line.style.pointerEvents = "auto"; // Обеспечиваем возможность клика на линии
+  });
+});
