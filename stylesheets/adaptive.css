@@ -1,0 +1,23 @@
+@media screen and (max-width: 500px) {
+  .windows {
+    display: none;
+  }
+  .windowsMobile {
+    display: block;
+    width: 221vw;
+    height: 221vw;
+    top: -30vw;
+  }
+  .zabor1 {
+    top: -18vw;
+    width: 200vw;
+  }
+  .clothes {
+    top: 13vw;
+    width: 321vw;
+  }
+  .windowsMobile:hover {
+    /* animation: fade 6s infinite steps(1); */
+    background-image: url("../images/.svg");
+  }
+}
