@@ -7,6 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
   vkl();
   draggable();
   moveBubble();
+  Changeim();
+  clouds();
+  setInterval(() => {
+    pirog();
+  }, 1000);
+  drawing();
 });
 function changeRoom() {
   let home = document.querySelector("#home");
@@ -115,11 +121,14 @@ function enlarge(image) {
     image.style.transform = `scale(${newScale})`; // Установка нового масштаба
   }
 }
-const clouds = document.querySelectorAll(".cloud");
-clouds.forEach((cloud) => {
-  const randomDuration = Math.random() * (20 - 10) + 10; // Генерируем случайную продолжительность
-  cloud.style.animationDuration = `${randomDuration}s`; // Устанавливаем случайную длительность анимации
-});
+function clouds() {
+  const clouds = document.querySelectorAll(".cloud");
+  clouds.forEach((cloud) => {
+    const randomDuration = Math.random() * (20 - 10) + 10; // Генерируем случайную продолжительность
+    cloud.style.animationDuration = `${randomDuration}s`; // Устанавливаем случайную длительность анимации
+  });
+}
+
 function svet() {
   let lampa = document.querySelector(".svet");
   const attic = document.querySelector(".attic");
@@ -136,6 +145,7 @@ function vkl() {
 }
 function draggable() {
   let currentDroppable = null;
+  let molot = document.querySelector("#molot");
   let matr = document.querySelector("#matr");
   let yula = document.querySelector("#yula");
   let teddy = document.querySelector("#teddy");
@@ -144,6 +154,7 @@ function draggable() {
   let cherry = document.querySelector("#cherry");
   let sugar = document.querySelector("#sugar");
   let myka = document.querySelector("#myka");
+  let pie = document.querySelector("#pie");
   let draggable = document.querySelectorAll(".drag");
 
   draggable.forEach((drag) => {
@@ -158,8 +169,8 @@ function draggable() {
       moveAt(event.pageX, event.pageY);
 
       function moveAt(pageX, pageY) {
-        drag.style.left = pageX - shiftX + "px";
-        drag.style.top = pageY - shiftY + "px";
+        drag.style.left = pageX - shiftX + "vw";
+        drag.style.top = pageY - shiftY + "vw";
       }
 
       function onMouseMove(event) {
@@ -193,10 +204,13 @@ function draggable() {
     function enterDroppable(elem) {
       drag.style.opacity = "0";
       drag.style.trasition = "opacity 0.5s ease";
+      drag.classList.add("true");
 
       setTimeout(() => {
         drag.style.display = "none";
       }, 501);
+
+      pirog();
     }
 
     drag.ondragstart = function () {
@@ -204,14 +218,29 @@ function draggable() {
     };
   });
 }
+
+function pirog() {
+  let milk = document.querySelector("#milk").classList.contains("true");
+  let eggs = document.querySelector("#eggs").classList.contains("true");
+  let cherry = document.querySelector("#cherry").classList.contains("true");
+  let sugar = document.querySelector("#sugar").classList.contains("true");
+  let myka = document.querySelector("#myka").classList.contains("true");
+  let miska = document.querySelector("#miska");
+
+  console.log(milk);
+
+  if (milk && eggs && cherry && sugar && myka) {
+    miska.style.backgroundImage = "url('images/pie.svg')";
+  }
+}
 // Функция для перемещения пузырька
 function moveBubble() {
-  const bubbles = document.querySelectorAll(".bubble");
+  const bubbles = document.querySelectorAll("#bubble");
 
   bubbles.forEach((bubble) => {
-    const randomX = Math.random() * (window.innerWidth - 20); // 100 - ширина пузырька
-    const randomY = Math.random() * (window.innerHeight - 20); // 100 - высота пузырька
-    bubble.style.transform = `translate(${randomX}vw, ${randomY}vw)`;
+    const randomX = Math.random() * (window.innerWidth / 20); // 100 - ширина пузырька
+    const randomY = Math.random() * (window.innerHeight / 20); // 100 - высота пузырька
+    // bubble.style.cssText = `transform: translate(${randomX}vw, ${randomY}vw)`;
 
     // Анимация "плавания" пузырька
     setInterval(() => {
@@ -229,59 +258,103 @@ function moveBubble() {
     });
   });
 }
-const images = document.querySelectorAll(".screen img");
-let currentIndex = 0;
 
-document.getElementById("changeImageBtn").addEventListener("click", () => {
-  images[currentIndex].classList.remove("active");
-  currentIndex = (currentIndex + 1) % images.length;
-  images[currentIndex].classList.add("active");
-});
-const drawArea = document.getElementById("drawArea");
-const clearBtn = document.getElementById("clearBtn");
+function Changeim() {
+  const images = document.querySelectorAll(".screen img");
+  let currentIndex = 0;
 
-let isDrawing = false;
-let lastX = 0;
-let lastY = 0;
+  document.getElementById("changeImageBtn").addEventListener("click", () => {
+    images[currentIndex].classList.remove("active");
+    currentIndex++;
+    images[currentIndex].classList.add("active");
 
-drawArea.addEventListener("mousedown", (e) => {
-  isDrawing = true;
-  lastX = e.offsetX;
-  lastY = e.offsetY;
-});
-
-drawArea.addEventListener("mousemove", (e) => {
-  if (!isDrawing) return;
-
-  const drawnLine = document.createElement("div");
-  drawnLine.classList.add("drawn");
-
-  // Получаем текущие координаты мыши
-  const currentX = e.offsetX;
-  const currentY = e.offsetY;
-
-  // Находим ширину и высоту линии
-  const width = Math.abs(currentX - lastX);
-  const height = Math.abs(currentY - lastY);
-
-  // Настраиваем стиль линии
-  drawnLine.style.width = `${width}vw`;
-  drawnLine.style.height = "4vw"; // Толщина линии
-  drawnLine.style.left = `${Math.min(currentX, lastX)}vw`;
-  drawnLine.style.top = `${Math.min(currentY, lastY)}vw`;
-  drawnLine.style.transform = `rotate(${
-    Math.atan2(currentY - lastY, currentX - lastX) * (180 / Math.PI)
-  }deg)`;
-
-  drawArea.appendChild(drawnLine);
-
-  lastX = currentX;
-  lastY = currentY;
-});
-
-drawArea.addEventListener("mouseup", () => {
-  isDrawing = false;
-  drawArea.querySelectorAll(".drawn").forEach((line) => {
-    line.style.pointerEvents = "auto"; // Обеспечиваем возможность клика на линии
+    if (currentIndex % 2 == 0) {
+      currentIndex = 0;
+    }
   });
-});
+}
+function drawing() {
+  var canvas = document.getElementById("drawingArea");
+  var ctx = canvas.getContext("2d");
+
+  function getMousePos(canvas, evt) {
+    var rect = canvas.getBoundingClientRect();
+    return {
+      x: evt.clientX - rect.left,
+      y: evt.clientY - rect.top,
+    };
+  }
+
+  function mouseMove(evt) {
+    var mousePos = getMousePos(canvas, evt);
+    ctx.lineTo(mousePos.x, mousePos.y);
+    ctx.stroke();
+  }
+
+  canvas.addEventListener("mousedown", function (evt) {
+    var mousePos = getMousePos(canvas, evt);
+    ctx.beginPath();
+    ctx.moveTo(mousePos.x, mousePos.y);
+    evt.preventDefault();
+    canvas.addEventListener("mousemove", mouseMove, false);
+  });
+
+  canvas.addEventListener(
+    "mouseup",
+    function () {
+      canvas.removeEventListener("mousemove", mouseMove, false);
+    },
+    false
+  );
+
+  document.getElementById("clearButton").addEventListener(
+    "click",
+    function () {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    },
+    false
+  );
+
+  var colors = [
+    "red",
+    "blue",
+    "green",
+    "purple",
+    "yellow",
+    "orange",
+    "pink",
+    "black",
+    "white",
+    "ebebeb",
+  ];
+  var size = [1, 3, 5, 10, 15, 20];
+  var sizeNames = ["default", "three", "five", "ten", "fifteen", "twenty"];
+
+  function listener(i) {
+    document.getElementById(colors[i]).addEventListener(
+      "click",
+      function () {
+        ctx.strokeStyle = colors[i];
+      },
+      false
+    );
+  }
+
+  function fontSizes(i) {
+    document.getElementById(sizeNames[i]).addEventListener(
+      "click",
+      function () {
+        ctx.setLineWidth(size[i]);
+      },
+      false
+    );
+  }
+
+  // for (var i = 0; i < colors.length; i++) {
+  //   listener(i);
+  // }
+
+  // for (var i = 0; i < size.length; i++) {
+  //   fontSizes(i);
+  // }
+}

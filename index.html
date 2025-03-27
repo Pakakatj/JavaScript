@@ -66,6 +66,7 @@
         <img id="yula" class="drag" src="images/ula.png" alt="" />
         <img id="matr" class="drag" src="images/matr.png" alt="" />
         <img id="teddy" class="drag" src="images/teddy.png" alt="" />
+        <img id="molot" class="drag" src="images/molot.png" alt="" />
         <img src="images/knopkadom.svg" class="domik" />
       </section>
     </article>
@@ -74,10 +75,10 @@
         <img src="images/vkl.svg" class="vkl" />
         <img src="images/knopkadom.svg" class="domik" />
         <div class="book">
-          <div class="page" id="drawArea"></div>
+          <canvas class="page" id="drawingArea"></canvas>
         </div>
         <div class="tools">
-          <button id="clearBtn"></button>
+          <button id="clearButton"></button>
         </div>
       </section>
     </article>
@@ -109,11 +110,14 @@
     <article id="kitchenn" class="hidden komnata">
       <section class="kitchenn">
         <img id="milk" class="drag" src="images/milk.svg" alt="" />
-        <img id="miska" class="droppable" src="images/chasha.svg" alt="" />
+        <div class="miska" class="droppable" id="miska"></div>
+        <!-- <div class="pie" class="droppable" id="pie"></div> -->
+
         <img id="eggs" class="drag" src="images/eggs.svg" alt="" />
         <img id="cherry" class="drag" src="images/cherry.svg" alt="" />
         <img id="sugar" class="drag" src="images/sugar.svg" alt="" />
         <img id="myka" class="drag" src="images/flour.svg" alt="" />
+
         <img src="images/knopkadom.svg" class="domik" />
       </section>
     </article>

@@ -187,6 +187,9 @@ body {
   position: relative;
   background-size: cover;
 }
+/* .kitchenn img {
+  opacity: 1;
+} */
 .livingroomm {
   width: 80vw;
   height: 50vw;
@@ -250,7 +253,7 @@ body {
 .cloud {
   position: absolute;
   opacity: 0.8;
-  animation: float 15s infinite linear;
+  animation: float 17s infinite linear;
   background-size: cover;
 }
 
@@ -319,22 +322,23 @@ body {
 }
 
 #korobka {
-  width: 18vw;
-  height: 16vw;
+  width: 17vw;
+  height: 15vw;
   margin-top: 32vw;
   margin-left: 27vw;
 }
 #korobka2 {
-  width: 18vw;
-  height: 16vw;
-  margin-bottom: 40vw;
-  margin-left: 50vw;
+  position: absolute;
+  width: 17vw;
+  height: 15vw;
+  top: 35vw;
+  left: 15vw;
 }
 #korobka3 {
-  width: 18vw;
-  height: 16vw;
-  margin-bottom: 220vw;
-  margin-left: 50vw;
+  width: 17vw;
+  height: 15vw;
+  position: absolute;
+  top: 36vw;
 }
 #yula {
   position: absolute;
@@ -360,6 +364,14 @@ body {
   cursor: pointer;
   transition: opacity 0.3s;
 }
+#molot {
+  position: absolute;
+  width: 11vw;
+  top: 28vw;
+  left: 58vw;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
 #bubble {
   top: 30vw;
   left: 40vw;
@@ -370,13 +382,9 @@ body {
   transition: transform 0.3s ease-in-out;
   background-size: cover;
 }
-.b1 {
-  top: 20vw;
-  left: 50vw;
-}
-
 .draggable {
   width: 6vw;
+  height: 6vw;
   margin-top: 40vw;
   margin-left: 9vw;
   cursor: pointer;
@@ -389,14 +397,7 @@ body {
   cursor: pointer;
   transition: opacity 0.3s;
   position: absolute;
-}
-#miska {
-  width: 16vw;
-  top: 21vw;
-  left: 31vw;
-  cursor: pointer;
-  transition: opacity 0.3s;
-  position: absolute;
+  opacity: 1;
 }
 #eggs {
   width: 14vw;
@@ -405,6 +406,7 @@ body {
   cursor: pointer;
   transition: opacity 0.3s;
   position: absolute;
+  opacity: 1;
 }
 #cherry {
   width: 12.5vw;
@@ -413,6 +415,7 @@ body {
   cursor: pointer;
   transition: opacity 0.3s;
   position: absolute;
+  opacity: 1;
 }
 #sugar {
   width: 8.3vw;
@@ -421,8 +424,18 @@ body {
   cursor: pointer;
   transition: opacity 0.3s;
   position: absolute;
+  opacity: 1;
 }
 #myka {
+  width: 10.6vw;
+  top: 8.8vw;
+  left: 46vw;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  position: absolute;
+  opacity: 1;
+}
+#pie {
   width: 10.6vw;
   top: 8.8vw;
   left: 46vw;
@@ -448,6 +461,9 @@ body {
   height: 100%;
   background-color: #222;
 }
+.screen img {
+  display: none;
+}
 img {
   max-width: 100%;
   max-height: 100%;
@@ -456,13 +472,25 @@ img.active {
   display: block;
 }
 button {
-  margin-top: 10vw;
-  padding: 10vw 10vw;
-  font-size: 10vw;
+  background-image: url("../images/irriser.svg");
+  background-size: cover;
+  cursor: pointer;
+  width: 5vw;
+  height: 5vw;
+  outline: none;
+  margin-top: 20vw;
+}
+#clearButton {
+  background-image: url("../images/irriser.svg");
+  background-size: cover;
+  cursor: pointer;
+  width: 5vw;
+  height: 5vw;
+  outline: none;
 }
 .book {
-  width: 100%;
-  height: 100%;
+  width: 60%;
+  height: 68%;
   position: relative;
   overflow: hidden;
   left: 17vw;
@@ -470,21 +498,93 @@ button {
 }
 
 .page {
-  width: 43vw;
+  top: 3vw;
+  width: 39vw;
   height: 33vw;
   box-sizing: border-box;
   position: relative;
   background-image: url("../images/book.svg");
   background-size: cover;
+  cursor: crosshair;
 }
 
 .drawn {
   position: absolute;
-  background-color: #000;
   pointer-events: none;
 }
 
-.tools {
+/* .tools {
+  background-image: url("../images/irriser.svg");
+  background-size: cover;
+  cursor: pointer;
+  width: 5vw;
   height: 5vw;
-  bottom: 10vw;
+} */
+#bubble.b1 {
+  left: 26vw;
+  top: 25vw;
+}
+#bubble.b2 {
+  left: 55vw;
+  top: 11vw;
+}
+#bubble.b3 {
+  width: 5vw;
+  height: 5vw;
+  left: 39vw;
+  top: 8vw;
+}
+#bubble.b4 {
+  width: 5vw;
+  height: 5vw;
+  left: 65vw;
+  top: 18vw;
+}
+#bubble.b5 {
+  width: 11vw;
+  height: 11vw;
+  left: 49vw;
+  top: 28vw;
+}
+#bubble.b6 {
+  width: 7vw;
+  height: 7vw;
+  left: 43vw;
+  top: 17vw;
+}
+#bubble.b7 {
+  width: 10vw;
+  height: 10vw;
+  left: 67vw;
+  top: 25vw;
+}
+.miska {
+  background-image: url("../images/chasha.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 16vw;
+  height: 16vw;
+  top: 21vw;
+  left: 31vw;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  position: absolute;
+}
+#pie.pie {
+  background-image: url("../images/pie.svg");
+  background-size: contain;
+  width: 16vw;
+  top: 21vw;
+  left: 31vw;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  position: absolute;
+}
+
+.line {
+  position: absolute;
+
+  width: 5vw; /* Толщина линии */
+  height: 5vw; /* Толщина линии */
+  border-radius: 50%; /* Круглая форма */
 }
