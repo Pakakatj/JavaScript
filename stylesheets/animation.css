@@ -27,14 +27,14 @@
     transform: rotate(0deg);
   }
 }
-@keyframes float {
+@keyframes float2 {
   0% {
-    transform: translateX(0);
+    transform: translateY(0);
   }
   50% {
-    transform: translateX(-7vw);
+    transform: translateY(-7vw);
   }
   100% {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }

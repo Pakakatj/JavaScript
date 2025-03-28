@@ -244,7 +244,7 @@ function moveBubble() {
 
     // Анимация "плавания" пузырька
     setInterval(() => {
-      bubble.style.animation = "float 2s ease-in-out infinite"; // Пузырь плавает
+      bubble.style.animation = "float2 3s ease-in-out infinite"; // Пузырь плавает
       moveBubble();
     }, 2000);
 
@@ -268,7 +268,7 @@ function Changeim() {
     currentIndex++;
     images[currentIndex].classList.add("active");
 
-    if (currentIndex % 2 == 0) {
+    if (currentIndex % 6 == 0) {
       currentIndex = 0;
     }
   });

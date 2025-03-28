@@ -187,13 +187,18 @@ body {
   position: relative;
   background-size: cover;
 }
+#changeImageBtn {
+  background-image: url("../images/knopka.svg");
+  width: 5vw;
+  height: 5vw;
+}
 /* .kitchenn img {
   opacity: 1;
 } */
 .livingroomm {
   width: 80vw;
   height: 50vw;
-  background-image: url("../images/livingroomm.svg");
+
   position: relative;
   background-size: cover;
 }
@@ -444,22 +449,18 @@ body {
   position: absolute;
 }
 .tv {
-  width: 25.5vw;
-  height: 20.5vw;
+  width: 80vw;
+  height: 49.5vw;
   background-color: black;
-  border-radius: 1vw;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
-  left: 21.5vw;
-  bottom: 13vw;
 }
 .screen {
   width: 100%;
   height: 100%;
-  background-color: #222;
 }
 .screen img {
   display: none;
@@ -475,10 +476,11 @@ button {
   background-image: url("../images/irriser.svg");
   background-size: cover;
   cursor: pointer;
-  width: 5vw;
-  height: 5vw;
+  width: 7vw;
+  height: 7vw;
   outline: none;
   margin-top: 20vw;
+  position: absolute;
 }
 #clearButton {
   background-image: url("../images/irriser.svg");
