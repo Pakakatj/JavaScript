@@ -13,7 +13,7 @@ body {
 }
 
 .dym {
-  width: 30.1vw;
+  width: 30.08vw;
   height: 26.6vw;
   background-image: url("../images/dim1.svg");
   background-size: contain;
@@ -416,7 +416,7 @@ body {
 #cherry {
   width: 12.5vw;
   top: 20.5vw;
-  left: 15vw;
+  left: 18vw;
   cursor: pointer;
   transition: opacity 0.3s;
   position: absolute;

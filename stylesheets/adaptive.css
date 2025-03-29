@@ -1,7 +1,7 @@
 @media screen and (max-width: 768px) {
   .house {
     width: 100%;
-    height: 200vw;
+    height: 194.6vw;
     background-image: url("../images/telfon.svg");
     background-size: contain;
   }
@@ -24,16 +24,17 @@
     object-fit: contain;
   }
   .rooms .bathroom {
-    width: 32vw;
+    width: 35vw;
     height: 37vw;
-    background-image: url("../images/bathroom.svg");
     margin-top: -11.9vw;
-    margin-left: -6vw;
+    margin-left: -6.9vw;
   }
   .rooms .bedroom {
+    background-image: url("../images/bedroomtel.svg");
+    width: 180%;
+    height: 25vh;
     margin-top: -45vw;
     margin-left: 45vw;
-    height: 28vw;
     background-size: cover;
   }
   .kapustas {
@@ -202,9 +203,14 @@
   }
   .tv {
     width: 60vw;
-
     bottom: 20vw;
     height: 120vw;
     background-position: center;
+  }
+  .dym {
+    width: 20vw;
+    height: 17.7vw;
+    right: 4vw;
+    top: 6.95vw;
   }
 }
