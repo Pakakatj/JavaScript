@@ -1,9 +1,40 @@
 @media screen and (max-width: 768px) {
   .house {
-    width: 115%;
+    width: 100%;
     height: 200vw;
     background-image: url("../images/telfon.svg");
     background-size: contain;
+  }
+  .rooms {
+    width: 76vw;
+    gap: 2.66vw 2.344vw;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    align-items: center;
+    padding-top: 15vw;
+  }
+  .rooms .cherdak {
+    width: 400vw;
+    height: 50vw;
+    background-image: url("../images/cherdak.svg");
+    margin-top: 4vw;
+    margin-left: -10.8vw;
+    background-size: cover;
+    object-fit: contain;
+  }
+  .rooms .bathroom {
+    width: 32vw;
+    height: 37vw;
+    background-image: url("../images/bathroom.svg");
+    margin-top: -11.9vw;
+    margin-left: -6vw;
+  }
+  .rooms .bedroom {
+    margin-top: -45vw;
+    margin-left: 45vw;
+    height: 28vw;
+    background-size: cover;
   }
   .kapustas {
     display: none;
@@ -18,8 +49,8 @@
   }
 
   .bedroomm {
-    height: 120vw;
-    background-position: center;
+    height: 110vw;
+    background-position: 76%;
   }
   .kitchenn {
     height: 120vw;
@@ -119,5 +150,61 @@
     height: 16vw;
     left: 10vw;
     top: 65vw;
+  }
+  .book {
+    width: 70%;
+    height: 43%;
+    left: -1vw;
+    top: 10vw;
+  }
+  .page {
+    width: 55vw;
+    height: 46vw;
+  }
+  .vkl {
+    width: 8vw;
+    margin-top: 36.2vw;
+    margin-left: 71.7vw;
+  }
+  #milk {
+    width: 17vw;
+  }
+  #eggs {
+    width: 27vw;
+    top: 56vw;
+    left: 53vw;
+  }
+  #cherry {
+    width: 22.5vw;
+    top: 54vw;
+    left: -1vw;
+  }
+  #sugar {
+    width: 18vw;
+    top: 88vw;
+    left: 55vw;
+  }
+  #myka {
+    width: 21vw;
+    top: 25vw;
+    left: 48vw;
+  }
+  #pie {
+    width: 10.6vw;
+    top: 8.8vw;
+    left: 46vw;
+  }
+  .miska {
+    width: 30vw;
+    height: 30vw;
+    top: 53vw;
+    left: 23vw;
+  }
+  .tv {
+    width: 60vw;
+
+    bottom: 20vw;
+    height: 120vw;
+    background-position: center;
   }
 }
