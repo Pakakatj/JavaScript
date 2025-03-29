@@ -6,7 +6,7 @@
     background-size: contain;
   }
   .rooms {
-    width: 76vw;
+    width: 85vw;
     gap: 2.66vw 2.344vw;
     display: flex;
     flex-wrap: wrap;
@@ -18,24 +18,35 @@
     width: 400vw;
     height: 50vw;
     background-image: url("../images/cherdak.svg");
-    margin-top: 4vw;
-    margin-left: -10.8vw;
+    margin-top: 2.8vw;
+    margin-left: -6.7vw;
     background-size: cover;
     object-fit: contain;
   }
   .rooms .bathroom {
     width: 35vw;
-    height: 37vw;
-    margin-top: -11.9vw;
-    margin-left: -6.9vw;
+    height: 36vw;
+    margin-top: -11.2vw;
+    margin-left: -2vw;
   }
   .rooms .bedroom {
-    background-image: url("../images/bedroomtel.svg");
-    width: 180%;
-    height: 25vh;
-    margin-top: -45vw;
-    margin-left: 45vw;
+    width: 54vw;
+    height: 36vw;
+    margin-top: -40.2vw;
+    margin-left: 36vw;
     background-size: cover;
+  }
+  .rooms .kitchen {
+    width: 54vw;
+    height: 38vw;
+    margin-top: -2.02vw;
+    margin-left: -1.6vw;
+  }
+  .rooms .livingroom {
+    width: 38vw;
+    margin-left: 56vw;
+    margin-top: -43.5vw;
+    height: 38vw;
   }
   .kapustas {
     display: none;
@@ -212,5 +223,11 @@
     height: 17.7vw;
     right: 4vw;
     top: 6.95vw;
+  }
+  .vegetables {
+    margin: -49vw 0 0 2vw;
+    width: 55%;
+    height: 15vw;
+    gap: 1vw;
   }
 }
