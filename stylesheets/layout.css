@@ -189,8 +189,11 @@ body {
 }
 #changeImageBtn {
   background-image: url("../images/knopka.svg");
-  width: 5vw;
-  height: 5vw;
+  background-size: cover;
+  width: 6.5vw;
+  height: 6vw;
+  bottom: 3vw;
+  left: 48vw;
 }
 /* .kitchenn img {
   opacity: 1;
@@ -485,10 +488,15 @@ button {
 #clearButton {
   background-image: url("../images/irriser.svg");
   background-size: cover;
+  background-position: 5%;
   cursor: pointer;
-  width: 5vw;
-  height: 5vw;
+  width: 3vw;
+  height: 7vw;
   outline: none;
+  left: 3.7vw;
+  bottom: 2vw;
+  border-radius: 10%;
+  transform: rotate(16deg);
 }
 .book {
   width: 60%;
