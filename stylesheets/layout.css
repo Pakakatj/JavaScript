@@ -475,6 +475,48 @@ img {
 img.active {
   display: block;
 }
+#first {
+  background-image: url("../images/1.svg");
+  background-size: cover;
+  width: 80vw;
+  height: 90vw;
+}
+#second {
+  background-image: url("../images/2.svg");
+  background-size: cover;
+  width: 80vw;
+  height: 90vw;
+}
+#thierd {
+  background-image: url("../images/3.svg");
+  background-size: cover;
+  width: 80vw;
+  height: 90vw;
+}
+#fourth {
+  background-image: url("../images/7.svg");
+  background-size: cover;
+  width: 80vw;
+  height: 90vw;
+}
+#fifth {
+  background-image: url("../images/4.svg");
+  background-size: cover;
+  width: 80vw;
+  height: 90vw;
+}
+#sixth {
+  background-image: url("../images/5.svg");
+  background-size: cover;
+  width: 80vw;
+  height: 90vw;
+}
+#seventh {
+  background-image: url("../images/6.svg");
+  background-size: cover;
+  width: 80vw;
+  height: 90vw;
+}
 button {
   background-image: url("../images/irriser.svg");
   background-size: cover;

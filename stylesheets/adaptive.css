@@ -72,10 +72,7 @@
     height: 120vw;
     background-position: center;
   }
-  .tv {
-    height: 120vw;
-    background-position: center;
-  }
+
   .svet {
     width: 23vw;
     bottom: 86vw;
@@ -213,10 +210,11 @@
     left: 23vw;
   }
   .tv {
-    width: 60vw;
-    bottom: 20vw;
-    height: 120vw;
+    width: 70vw;
+    bottom: 45vw;
+    height: 140vw;
     background-position: center;
+    background-size: cover;
   }
   .dym {
     width: 20vw;
@@ -229,5 +227,60 @@
     width: 55%;
     height: 15vw;
     gap: 1vw;
+  }
+  #first {
+    background-image: url("../images/livr1.svg");
+    background-size: cover;
+    width: 70vw;
+    height: 140vw;
+  }
+  #second {
+    background-image: url("../images/det.svg");
+    background-size: cover;
+    width: 70vw;
+    height: 140vw;
+  }
+  #thierd {
+    background-image: url("../images/un.svg");
+    background-size: cover;
+    width: 70vw;
+    height: 140vw;
+  }
+  #fourth {
+    background-image: url("../images/school.svg");
+    background-size: cover;
+    width: 70vw;
+    height: 140vw;
+  }
+  #fifth {
+    background-image: url("../images/dacha.svg");
+    background-size: cover;
+    width: 70vw;
+    height: 140vw;
+  }
+  #sixth {
+    background-image: url("../images/river.svg");
+    background-size: cover;
+    width: 70vw;
+    height: 140vw;
+  }
+  #seventh {
+    background-image: url("../images/uni.svg");
+    background-size: cover;
+    width: 70vw;
+    height: 140vw;
+  }
+  #clearButton {
+    width: 5vw;
+    height: 13vw;
+    margin-left: 10vw;
+    margin-bottom: 45vw;
+    position: absolute;
+  }
+  #changeImageBtn {
+    width: 10.5vw;
+    height: 10vw;
+    bottom: 37vw;
+    left: 48vw;
   }
 }
