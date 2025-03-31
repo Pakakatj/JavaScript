@@ -87,10 +87,10 @@ body {
 }
 
 .kapusta {
-  width: 3vw; /* Начальный размер изображения */
-  transition: transform 0.3s, opacity 0.3s; /* Плавный переход */
-  cursor: pointer; /* Указатель при наведении */
-  margin: 2.75vw; /* Отступ между изображениями */
+  width: 3vw;
+  transition: transform 0.3s, opacity 0.3s;
+  cursor: pointer;
+  margin: 2.75vw;
   margin-right: 82.75vw;
 }
 .vegetables {
@@ -105,11 +105,11 @@ body {
   width: 20%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Центрирование изображений */
+  justify-content: center;
   align-items: center;
   margin-left: 4vw;
   transition: transform 0.3s, opacity 0.3s, background-image 0.3s; /* Плавный переход */
-  cursor: pointer; /* Указатель при наведении */
+  cursor: pointer;
   gap: 2vw;
 }
 .carrot {
@@ -195,9 +195,6 @@ body {
   bottom: 3vw;
   left: 48vw;
 }
-/* .kitchenn img {
-  opacity: 1;
-} */
 .livingroomm {
   width: 80vw;
   height: 50vw;
@@ -604,7 +601,6 @@ button {
   top: 25vw;
 }
 #miska {
-  background-image: url("../images/chasha.svg");
   background-size: contain;
   background-repeat: no-repeat;
   width: 16vw;
@@ -628,8 +624,7 @@ button {
 
 .line {
   position: absolute;
-
-  width: 5vw; /* Толщина линии */
-  height: 5vw; /* Толщина линии */
-  border-radius: 50%; /* Круглая форма */
+  width: 5vw;
+  height: 5vw;
+  border-radius: 50%;
 }

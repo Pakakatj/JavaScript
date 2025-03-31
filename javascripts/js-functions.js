@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   Changeim();
   clouds();
   setInterval(() => {
-    pirog();
+    // pirog();
   }, 1000);
   drawing();
 });
@@ -78,7 +78,7 @@ function enlarge(image) {
     // Если масштаб достиг 8, изображение исчезает
     image.style.opacity = 0; // Устанавливаем прозрачность в 0
   } else {
-    image.style.transform = `scale(${newScale})`; // Установка нового масштаба
+    image.style.transform = `scale(${newScale})`;
   }
 }
 function scaleCarrot() {
@@ -216,47 +216,46 @@ function draggable() {
   });
 }
 
-function pirog() {
-  let milk =
-    document.querySelector("#milk")?.classList.contains("true") || false;
-  let eggs =
-    document.querySelector("#eggs")?.classList.contains("true") || false;
-  let cherry =
-    document.querySelector("#cherry")?.classList.contains("true") || false;
-  let sugar =
-    document.querySelector("#sugar")?.classList.contains("true") || false;
-  let myka =
-    document.querySelector("#myka")?.classList.contains("true") || false;
+// function pirog() {
+//   let milk =
+//     document.querySelector("#milk")?.classList.contains("true") || false;
+//   let eggs =
+//     document.querySelector("#eggs")?.classList.contains("true") || false;
+//   let cherry =
+//     document.querySelector("#cherry")?.classList.contains("true") || false;
+//   let sugar =
+//     document.querySelector("#sugar")?.classList.contains("true") || false;
+//   let myka =
+//     document.querySelector("#myka")?.classList.contains("true") || false;
 
-  console.log("Milk:", milk);
-  console.log("Eggs:", eggs);
-  console.log("Cherry:", cherry);
-  console.log("Sugar:", sugar);
-  console.log("Myka:", myka);
+//   console.log("Milk:", milk);
+//   console.log("Eggs:", eggs);
+//   console.log("Cherry:", cherry);
+//   console.log("Sugar:", sugar);
+//   console.log("Myka:", myka);
 
-  // Находим элемент #miska
-  let miska = document.querySelector("#miska");
+//   // Находим элемент #miska
+//   let miska = document.querySelector("#miska");
 
-  // Проверяем, что все ингредиенты добавлены
-  if (milk && eggs && cherry && sugar && myka) {
-    // Меняем фоновое изображение
-    if (miska) {
-      miska.style.backgroundImage = "url('images/pie.svg')";
-      miska.style.backgroundSize = "cover";
-      miska.style.backgroundPosition = "center";
-    } else {
-      console.error("Элемент #miska не найден!");
-    }
-  }
-}
+//   // Проверяем, что все ингредиенты добавлены
+//   if (milk && eggs && cherry && sugar && myka) {
+//     // Меняем фоновое изображение
+//     if (miska) {
+//       miska.style.backgroundImage = "url('images/pie.svg')";
+//       miska.style.backgroundSize = "cover";
+//       miska.style.backgroundPosition = "center";
+//     } else {
+//       console.error("miska не найден!");
+//     }
+//   }
+// }
 // Функция для перемещения пузырька
 function moveBubble() {
   const bubbles = document.querySelectorAll("#bubble");
 
   bubbles.forEach((bubble) => {
-    const randomX = Math.random() * (window.innerWidth / 20); // 100 - ширина пузырька
-    const randomY = Math.random() * (window.innerHeight / 20); // 100 - высота пузырька
-    // bubble.style.cssText = `transform: translate(${randomX}vw, ${randomY}vw)`;
+    const randomX = Math.random() * (window.innerWidth / 20); // - ширина пузырька
+    const randomY = Math.random() * (window.innerHeight / 20); // - высота пузырька
 
     // Анимация "плавания" пузырька
     setInterval(() => {
@@ -269,7 +268,7 @@ function moveBubble() {
       bubble.style.transition = "transform 0.3s ease-in-out";
       bubble.src = "images/bum.svg";
       setTimeout(() => {
-        bubble.style.display = "none"; // Лопаем пузырь
+        bubble.style.display = "none";
       }, 400);
     });
   });
@@ -365,31 +364,13 @@ function drawing() {
       false
     );
   }
+  const image = document.getElementById("miska");
 
-  // for (var i = 0; i < colors.length; i++) {
-  //   listener(i);
-  // }
-
-  // for (var i = 0; i < size.length; i++) {
-  //   fontSizes(i);
-  // }
+  let isChanged = false;
+  image.addEventListener("click", function () {
+    if (!isChanged) {
+      image.src = "images/pie.svg";
+      isChanged = true;
+    }
+  });
 }
-//  const data = event.dataTransfer.getData('text/plain'); // Получаем ID перетаскиваемого элемента
-//   const draggedElement = document.getElementById(data);
-
-//   if (draggedElement && draggedElement.classList.contains('kitchenn')) {
-//     // Увеличиваем счетчик добавленных ингредиентов
-//     ingredientsAdded++;
-
-//     // Скрываем ингредиент
-//     draggedElement.style.display = 'none';
-
-//     // Проверяем, все ли ингредиенты добавлены
-//     if (ingredientsAdded === totalIngredients) {
-//       // Меняем изображение корзины на пирог
-//       basketImage.src = 'https://via.placeholder.com/150?text=Pie';
-//       basketImage.alt = 'Pie';
-//       alert('Поздравляем! Вы сделали пирог!');
-//     }
-//   }
-// });
