@@ -565,13 +565,6 @@ button {
   pointer-events: none;
 }
 
-/* .tools {
-  background-image: url("../images/irriser.svg");
-  background-size: cover;
-  cursor: pointer;
-  width: 5vw;
-  height: 5vw;
-} */
 #bubble.b1 {
   left: 26vw;
   top: 25vw;
@@ -610,7 +603,7 @@ button {
   left: 67vw;
   top: 25vw;
 }
-.miska {
+#miska {
   background-image: url("../images/chasha.svg");
   background-size: contain;
   background-repeat: no-repeat;

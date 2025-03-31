@@ -169,16 +169,17 @@ function draggable() {
       moveAt(event.pageX, event.pageY);
 
       function moveAt(pageX, pageY) {
-        drag.style.left = pageX - shiftX + "vw";
-        drag.style.top = pageY - shiftY + "vw";
+        drag.style.left = pageX - shiftX + "px";
+        drag.style.top = pageY - shiftY + "px";
       }
 
       function onMouseMove(event) {
         moveAt(event.pageX, event.pageY);
 
-        drag.hidden = true;
+        // Скрываем элемент для получения элемента под курсором
+        drag.style.display = "none";
         let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
-        drag.hidden = false;
+        drag.style.display = "";
 
         if (!elemBelow) return;
 
@@ -186,8 +187,6 @@ function draggable() {
         if (currentDroppable != droppableBelow) {
           currentDroppable = droppableBelow;
           if (currentDroppable) {
-            // null если мы не над droppable сейчас, во время этого события
-            // (например, только что покинули droppable)
             enterDroppable(currentDroppable);
           }
         }
@@ -203,14 +202,12 @@ function draggable() {
 
     function enterDroppable(elem) {
       drag.style.opacity = "0";
-      drag.style.trasition = "opacity 0.5s ease";
-      drag.classList.add("true");
+      drag.style.transition = "opacity 0.5s ease";
+      drag.classList.add("dropped");
 
       setTimeout(() => {
         drag.style.display = "none";
       }, 501);
-
-      pirog();
     }
 
     drag.ondragstart = function () {
@@ -219,20 +216,20 @@ function draggable() {
   });
 }
 
-function pirog() {
-  let milk = document.querySelector("#milk").classList.contains("true");
-  let eggs = document.querySelector("#eggs").classList.contains("true");
-  let cherry = document.querySelector("#cherry").classList.contains("true");
-  let sugar = document.querySelector("#sugar").classList.contains("true");
-  let myka = document.querySelector("#myka").classList.contains("true");
-  let miska = document.querySelector("#miska");
+// function pirog() {
+//   let milk = document.querySelector("#milk").classList.contains("true");
+//   let eggs = document.querySelector("#eggs").classList.contains("true");
+//   let cherry = document.querySelector("#cherry").classList.contains("true");
+//   let sugar = document.querySelector("#sugar").classList.contains("true");
+//   let myka = document.querySelector("#myka").classList.contains("true");
+//   let miska = document.querySelector("#miska");
 
-  console.log(milk);
+//   console.log(milk);
 
-  if (milk && eggs && cherry && sugar && myka) {
-    miska.style.backgroundImage = "url('images/pie.svg')";
-  }
-}
+//   if (milk && eggs && cherry && sugar && myka) {
+//     miska.style.backgroundImage = "url('images/pie.svg')";
+//   }
+// }
 // Функция для перемещения пузырька
 function moveBubble() {
   const bubbles = document.querySelectorAll("#bubble");
