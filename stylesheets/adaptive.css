@@ -72,6 +72,12 @@
     height: 120vw;
     background-position: center;
   }
+  #miska {
+    width: 30vw;
+    height: 30vw;
+    top: 54vw;
+    left: 23vw;
+  }
 
   .svet {
     width: 23vw;

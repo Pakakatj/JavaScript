@@ -216,20 +216,39 @@ function draggable() {
   });
 }
 
-// function pirog() {
-//   let milk = document.querySelector("#milk").classList.contains("true");
-//   let eggs = document.querySelector("#eggs").classList.contains("true");
-//   let cherry = document.querySelector("#cherry").classList.contains("true");
-//   let sugar = document.querySelector("#sugar").classList.contains("true");
-//   let myka = document.querySelector("#myka").classList.contains("true");
-//   let miska = document.querySelector("#miska");
+function pirog() {
+  let milk =
+    document.querySelector("#milk")?.classList.contains("true") || false;
+  let eggs =
+    document.querySelector("#eggs")?.classList.contains("true") || false;
+  let cherry =
+    document.querySelector("#cherry")?.classList.contains("true") || false;
+  let sugar =
+    document.querySelector("#sugar")?.classList.contains("true") || false;
+  let myka =
+    document.querySelector("#myka")?.classList.contains("true") || false;
 
-//   console.log(milk);
+  console.log("Milk:", milk);
+  console.log("Eggs:", eggs);
+  console.log("Cherry:", cherry);
+  console.log("Sugar:", sugar);
+  console.log("Myka:", myka);
 
-//   if (milk && eggs && cherry && sugar && myka) {
-//     miska.style.backgroundImage = "url('images/pie.svg')";
-//   }
-// }
+  // Находим элемент #miska
+  let miska = document.querySelector("#miska");
+
+  // Проверяем, что все ингредиенты добавлены
+  if (milk && eggs && cherry && sugar && myka) {
+    // Меняем фоновое изображение
+    if (miska) {
+      miska.style.backgroundImage = "url('images/pie.svg')";
+      miska.style.backgroundSize = "cover";
+      miska.style.backgroundPosition = "center";
+    } else {
+      console.error("Элемент #miska не найден!");
+    }
+  }
+}
 // Функция для перемещения пузырька
 function moveBubble() {
   const bubbles = document.querySelectorAll("#bubble");
@@ -355,3 +374,22 @@ function drawing() {
   //   fontSizes(i);
   // }
 }
+//  const data = event.dataTransfer.getData('text/plain'); // Получаем ID перетаскиваемого элемента
+//   const draggedElement = document.getElementById(data);
+
+//   if (draggedElement && draggedElement.classList.contains('kitchenn')) {
+//     // Увеличиваем счетчик добавленных ингредиентов
+//     ingredientsAdded++;
+
+//     // Скрываем ингредиент
+//     draggedElement.style.display = 'none';
+
+//     // Проверяем, все ли ингредиенты добавлены
+//     if (ingredientsAdded === totalIngredients) {
+//       // Меняем изображение корзины на пирог
+//       basketImage.src = 'https://via.placeholder.com/150?text=Pie';
+//       basketImage.alt = 'Pie';
+//       alert('Поздравляем! Вы сделали пирог!');
+//     }
+//   }
+// });
